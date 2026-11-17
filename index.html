@@ -4,10 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#107c41">
-  <meta name="description" content="Build your Excel skills with the GKS LETS EXCEL beginner quiz.">
-  <title>GKS LETS EXCEL Quiz App</title>
+  <meta name="description" content="Build your Excel skills with GKS LETS EXCEL quizzes for beginner, intermediate and advanced learners.">
+  <title>GKS LETS EXCEL | Excel Skills Practice &amp; Assessment</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -19,54 +18,13 @@
   </header>
 
   <main id="app" class="shell">
-    <section id="home-screen" class="screen home-screen" aria-labelledby="home-title">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR EXCEL LEARNING JOURNEY</span>
-        <h1 id="home-title">GKS LETS EXCEL<br><span>Quiz App</span></h1>
-        <p class="hero-intro">Welcome! Build confidence with the Excel skills you use every day. Choose a mode and see what you know.</p>
-        <div class="mode-grid">
-          <label class="count-setting" for="question-count">
-            <span class="count-setting-copy"><strong>Questions per quiz</strong><span>Choose your quiz length</span></span>
-            <select id="question-count" class="count-select" aria-label="Questions per quiz">
-              <option value="10">10 Questions</option>
-              <option value="20">20 Questions</option>
-              <option value="30">30 Questions</option>
-              <option value="50">50 Questions</option>
-            </select>
-          </label>
-          <button class="mode-card practice-card" type="button" data-start="practice">
-            <span class="mode-icon" aria-hidden="true">✎</span>
-            <span class="mode-copy"><strong>Practice Mode</strong><span>Learn as you go with instant feedback and helpful explanations.</span></span>
-            <span class="mode-arrow" aria-hidden="true">→</span>
-          </button>
-          <button class="mode-card assessment-card" type="button" data-start="assessment">
-            <span class="mode-icon" aria-hidden="true">✓</span>
-            <span class="mode-copy"><strong>Assessment Mode</strong><span>Test yourself first, then review your results at the end.</span></span>
-            <span class="mode-arrow" aria-hidden="true">→</span>
-          </button>
-        </div>
-      </div>
-      <aside class="course-panel" aria-label="Quiz details">
-        <div class="panel-top"><span class="excel-tile" aria-hidden="true">X</span><span class="level-pill">BEGINNER</span></div>
-        <p class="panel-label">YOUR STARTING POINT</p>
-        <h2>Excel<br>Beginners</h2>
-        <p class="panel-description">A quick foundation in essential keyboard shortcuts and everyday functions.</p>
-        <div class="panel-divider"></div>
-        <div class="stat-row"><span>Total questions</span><strong>50</strong></div>
-        <div class="stat-row"><span>Topics</span><strong>2</strong></div>
-        <div class="topic-chips"><span>Shortcuts</span><span>Functions</span></div>
-        <div class="sheet-decoration" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      </aside>
-      <footer class="home-footer"><span>Made for curious minds.</span><span>GKS LETS EXCEL <b>·</b> EXCEL BEGINNERS</span></footer>
-    </section>
-
     <section id="quiz-screen" class="screen quiz-screen" aria-labelledby="quiz-title" hidden>
       <div class="quiz-heading">
-        <button class="text-button" type="button" data-home><span aria-hidden="true">←</span> Exit quiz</button>
+        <button class="text-button" type="button" data-home><span aria-hidden="true">←</span> Exit session</button>
         <div><span id="mode-label" class="eyebrow">PRACTICE MODE</span><h1 id="quiz-title">Excel Beginners</h1></div>
-        <span class="question-counter" id="question-counter">01 / 50</span>
+        <span class="question-counter" id="question-counter">01 / 30</span>
       </div>
-      <div class="progress-wrap"><div class="progress-meta"><span id="progress-label">Question 1 of 50</span><span id="progress-percent">2%</span></div><div class="progress-track" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="50" aria-valuenow="1"><div id="progress-fill" class="progress-fill"></div></div></div>
+      <div class="progress-wrap"><div class="progress-meta"><span id="progress-label">Question 1 of 30</span><span id="progress-percent">3%</span></div><div class="progress-track" role="progressbar" aria-label="Session progress" aria-valuemin="0" aria-valuemax="30" aria-valuenow="1"><div id="progress-fill" class="progress-fill" style="width:3.33%"></div></div></div>
       <article class="question-card">
         <div class="question-meta"><span id="topic-tag" class="topic-tag">KEYBOARD SHORTCUTS</span><span id="answered-indicator" class="answered-indicator" hidden>ANSWER SAVED</span></div>
         <h2 id="question-text"></h2>
@@ -82,15 +40,86 @@
     </section>
 
     <section id="results-screen" class="screen results-screen" aria-labelledby="results-title" hidden>
-      <div class="results-heading"><span class="eyebrow"><span class="eyebrow-dot"></span> QUIZ COMPLETE</span><h1 id="results-title">Your results</h1><p id="performance-message"></p></div>
+      <div class="results-heading"><h1 id="results-title">Your results</h1><div class="results-session-badges" aria-label="Selected session level and mode"><span id="results-level-badge" class="results-session-badge"></span><span class="results-session-divider" aria-hidden="true">|</span><span id="results-mode-badge" class="results-session-badge"></span></div><p id="performance-message"></p></div>
       <div class="score-layout">
-        <div class="score-card"><span class="score-label">YOUR SCORE</span><div class="score-number"><strong id="score-number">0</strong><span>/ <span id="score-total">50</span></span></div><div class="score-rule"></div><div class="score-percent"><strong id="score-percent">0%</strong><span>Final score</span></div></div>
+        <div class="score-card"><span class="score-label">YOUR SCORE</span><div class="score-number"><strong id="score-number">0</strong><span>/ <span id="score-total">30</span></span></div><div class="score-rule"></div><div class="score-percent"><strong id="score-percent">0%</strong><span>Final score</span></div></div>
         <div class="result-stats"><div class="result-stat"><span class="stat-symbol correct-symbol">✓</span><span>Correct answers</span><strong id="correct-count">0</strong></div><div class="result-stat"><span class="stat-symbol incorrect-symbol">×</span><span>Incorrect answers</span><strong id="incorrect-count">0</strong></div><div class="result-stat"><span class="stat-symbol unanswered-symbol">—</span><span>Unanswered</span><strong id="unanswered-count">0</strong></div></div>
       </div>
+      <section class="topic-performance" aria-labelledby="topic-performance-title">
+        <div class="topic-performance-heading"><div><span class="eyebrow">YOUR SESSION BREAKDOWN</span><h2 id="topic-performance-title">Topic-wise performance</h2></div></div>
+        <div id="topic-results" class="topic-results-grid"></div>
+        <div class="topic-insights">
+          <h3>Strengths and areas to practise</h3>
+          <p id="topic-sample-note" class="topic-sample-note"></p>
+          <div class="topic-insights-grid">
+            <article class="topic-insight-card"><h4>Stronger topics</h4><div id="topic-strengths"></div></article>
+            <article class="topic-insight-card"><h4>Topics to practise</h4><div id="topics-to-practise"></div></article>
+          </div>
+        </div>
+      </section>
       <div class="review-heading"><div><span class="eyebrow">LEARN FROM EVERY QUESTION</span><h2>Review your answers</h2></div><span id="review-summary" class="review-summary"></span></div>
       <div id="review-list" class="review-list"></div>
-      <div class="results-actions"><button id="retake-button" class="button button-primary" type="button">Retake quiz <span aria-hidden="true">↻</span></button><button class="button button-secondary" type="button" data-home>Return home <span aria-hidden="true">→</span></button></div>
+      <div class="results-actions"><button id="retake-button" class="button button-primary" type="button">Retake session <span aria-hidden="true">↻</span></button><button class="button button-secondary" type="button" data-home>Return home <span aria-hidden="true">→</span></button></div>
     </section>
+    <section id="home-screen" class="screen home-screen" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR EXCEL LEARNING JOURNEY</span>
+        <h1 id="home-title">GKS LETS EXCEL</h1>
+        <p class="hero-subtitle">Excel Skills Practice &amp; Assessment</p>
+        <p class="hero-intro">Build confidence. Strengthen your skills. Measure your progress.</p>
+        <div class="mode-grid">
+          <label class="count-setting" for="level-select">
+            <span class="count-setting-copy"><strong>Difficulty level</strong><span>Choose your learning level</span></span>
+            <select id="level-select" class="count-select" aria-label="Difficulty level">
+              <option value="">Select a level</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </label>
+          <label class="count-setting" for="question-count">
+            <span class="count-setting-copy"><strong>Questions per session</strong><span>Choose your session length</span></span>
+            <select id="question-count" class="count-select" aria-label="Questions per session" disabled>
+              <option value="">Select a level first</option>
+            </select>
+          </label>
+          <button class="mode-card practice-card" type="button" data-start="practice" disabled>
+            <span class="mode-icon" aria-hidden="true">✎</span>
+            <span class="mode-copy"><strong>Practice Mode</strong><span>Learn as you go with instant feedback and helpful explanations.</span></span>
+            <span class="mode-arrow" aria-hidden="true">→</span>
+          </button>
+          <button class="mode-card assessment-card" type="button" data-start="assessment" disabled>
+            <span class="mode-icon" aria-hidden="true">✓</span>
+            <span class="mode-copy"><strong>Assessment Mode</strong><span>Test yourself first, then review your results at the end.</span></span>
+            <span class="mode-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+      <aside class="course-panel" aria-label="Session details">
+        <div class="panel-top"><span class="excel-tile" aria-hidden="true">X</span><span class="level-pill">3 LEVELS</span></div>
+        <p class="panel-label">CHOOSE YOUR STARTING POINT</p>
+        <h2>Excel Skills</h2>
+        <p class="panel-description">Three levels of practice, from everyday essentials through advanced analysis.</p>
+        <div class="panel-divider"></div>
+        <div class="stat-row"><span>Total questions</span><strong>90</strong></div>
+        <div class="stat-row"><span>Topics per level</span><strong>6</strong></div>
+        <div class="topic-chips"><span>Beginner</span><span>Intermediate</span><span>Advanced</span></div>
+        <div class="sheet-decoration" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </aside>
+      <div class="landing-footer">
+        <div id="counter-footer" class="counter-footer" aria-label="Visitor counter">
+          <script src="question-bank.js"></script>
+          <script src="script.js"></script>
+          <!-- GNRCounter -->
+          <script src="https://gnrcounter.com/counter.php?accId=bf13f641da20d0a7ca534d1784c879e3&amp;type=text&amp;bg=F5F8F5&amp;text=172B46&amp;stats=totalviews&amp;lang=en"></script>
+          <noscript><a href="https://gnrcounter.com" title="Free visitor counter">Free visitor counter</a></noscript>
+          <!-- End GNRCounter -->
+        </div>
+        <footer class="home-footer"><span>Made for curious minds.</span><span class="version-label">VERSION 1.3</span><span>GKS LETS EXCEL <b>·</b> EXCEL SKILLS</span></footer>
+      </div>
+    </section>
+
   </main>
+
 </body>
 </html>
